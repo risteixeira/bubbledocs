@@ -1,0 +1,4 @@
+Tarefas concretizadas na semana 0:
+
+Esta semana lê-mos o enunciado e criá-mos os issues do mesmo, no git.
+Organizá-mos também a Wiki para esta entrega conforme o pedido no enunciado.
