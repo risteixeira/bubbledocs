@@ -1,0 +1,170 @@
+package pt.ulisboa.tecnico.bubbledocs.domain;
+
+class BubbleDocs{
+	Integer _sheetCounter;
+}
+
+
+class User{
+	String _username;
+	String _name;
+	String _password; 
+	String _email;
+}
+
+class SpreadSheet{
+	String _name;
+	Integer _line;
+	Integer _column;
+	Integer _id;
+	String _date;
+	String _owner;
+}
+
+class Cell{
+	Integer _line;
+	Integer _column;
+	boolean _protected;
+}
+
+class Access{
+	String _permission;
+}
+
+class Interval;
+
+class Content;
+
+class Literal extends Content{
+	Integer _value;
+}
+
+class Reference extends Content{
+	Integer _line;
+	Integer _column;
+}
+
+class Function extends Content;
+
+class BinaryFunction extends Function;
+
+class IntervalFunction extends Function;
+
+class Add extends BinaryFunction;
+
+class Mul extends BinaryFunction;
+
+class Sub extends BinaryFunction;
+
+class Div extends BinaryFunction;
+
+class Avg extends IntervalFunction;
+
+class Prd extends IntervalFunction;
+
+class Session;
+
+relation DomainRootHasBubbleDocsApplication{
+	.pt.ist.fenixframework.DomainRoot playsRole root{
+	multiplicity 0..1;
+	}
+	BubbleDocs playsRole bubbledocs{
+		multiplicity 0..1;
+	}
+}
+
+relation BubbleDocsContainsUsers{
+	BubbleDocs playsRole bubbledocs;
+	User playsRole user{
+		multiplicity *;
+	}
+}
+
+relation DomainRootHasSession{
+	.pt.ist.fenixframework.DomainRoot playsRole root{
+	multiplicity 0..1;
+	}
+	Session playsRole session{
+		multiplicity 0..1;
+	}
+}
+
+relation BubbleDocsContainsSpreadSheet{
+	BubbleDocs playsRole bubbledocs;
+	SpreadSheet playsRole spreadsheet{
+		multiplicity *;
+	}
+}
+
+relation UserContainsSpreadSheet{
+	User playsRole user{
+		multiplicity 0..*;
+	}
+	SpreadSheet playsRole spreadsheet{
+		multiplicity 0..*;
+	}
+}
+
+relation SpreadSheetContainsCell{
+	SpreadSheet playsRole spreadsheet;
+	Cell playsRole cell{
+		multiplicity *;
+	}
+}
+
+relation CellContainsContent{
+	Cell playsRole cell;
+	Content playsRole content{
+		multiplicity 0..1;
+	}
+}
+
+relation UserContainsAccess{
+	User playsRole user;
+	Access playsRole access{
+		multiplicity *;
+	}
+}
+
+relation SpreadSheetContainsAccess{
+	SpreadSheet playsRole spreadsheet;
+	Access playsRole access{
+		multiplicity *;
+	}
+}
+
+relation ReferenceContainsCell{
+	Reference playsRole reference;
+	Cell playsRole cellRef{
+		multiplicity 0..1;
+	}
+
+}
+
+relation IntervalContainsReference{
+	Interval playsRole interval;
+	Reference playsRole reference{
+		multiplicity 2;
+	}
+}
+
+relation FunctionContainsContent1{
+	Function playsRole function1;
+	Content playsRole content1{
+		multiplicity 0..1;
+	}
+}
+
+relation FunctionContainsContent2{
+	Function playsRole function2;
+	Content playsRole content2{
+		multiplicity 0..1;
+	}
+}
+
+relation SessionContainsUser{
+	Session playsRole session;
+	User playsRole user{
+		multiplicity *;
+	}
+}

@@ -1,0 +1,10 @@
+Tarefas concretizadas na semana 2:
+
+Nesta semana, como já tínhamos mais disponibilidade, encontrámo-nos durante toda a semana,
+pegando em cada um dos issues e tópicos discutidos anteriormente e começámos, oficialmente,
+a última entrega.
+
+Passámos várias noites em branco a corrigir testes e bugs que não faziam qualquer tipo de sentido e
+acabámos por limpar, ou pelo menos tentar limpar, o código.
+
+Quanto às horas de trabalho, perdemos completamente a conta.

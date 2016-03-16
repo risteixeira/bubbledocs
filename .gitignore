@@ -1,0 +1,28 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# extra files
+.settings
+.DS_Store
+.project
+*.dat
+.classpath
+
+# sd-id generated sources
+sd-id/target/**
+sd-id-cli/target/**
+sd-store/target/**
+sd-store-cli/target/**
+uddi-naming/target/**
+ws-handlers/target/**
+/target/
+target/juddi-derby-test-db/**
+
+derby.log
